@@ -18,6 +18,8 @@ accessibilityText = 'Um texto acessivel';
 
 valorDoInput = '';
 
+valorContador = 10;
+
 constructor() {
 // setTimeout(() => {
 //   this.isDisable = false;
@@ -42,7 +44,5 @@ constructor() {
     console.log('emitindo informações para o componente pai!');
     this.clicado.emit($event);
   }
-  onValorAtualizadoNoContador(novoValor){
-    console.log('onValorAtualizadoNoContador: ', novoValor);
-  }
+  
 }
