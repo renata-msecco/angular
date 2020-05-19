@@ -23,12 +23,32 @@
 <hr>
 
 <ul>
-   <li *ngFor="let fruta of listaFrutas"> {{ fruta }} </li> 
+    <li *ngFor="let fruta of listaFrutas"> {{ fruta }} </li>
 </ul>
 
 <ul>
-    <li *ngFor="let carro of listaCarros; let index = index; first as primeiro; last as ultimo; odd as impar; even as par">
+    <li
+        *ngFor="let carro of listaCarros; let index = index; first as primeiro; last as ultimo; odd as impar; even as par">
         {{ primeiro }} - {{ index +1 }} - {{ carro.placa }} - {{ carro.cor}}-
-         {{carro.estado}} - {{impar}} - {{par}} - {{ultimo}}
-         </li> 
- </ul>
+        {{carro.estado}} - {{impar}} - {{par}} - {{ultimo}}
+    </li>
+</ul>
+<hr>
+
+<h1>Exercício Proposto com ngIf e ngFor</h1>
+
+<ul>
+    <li *ngFor="let memesAgrupados of MEMES_AGRUPADOS_POR_CATEGORIAS">
+        <h2> {{ memesAgrupados.categoria }}</h2>
+
+        <div *ngFor="let meme of memesAgrupados.memes; even as par">
+            <img [src]=" CAMINHO_URL + meme.imagemURL" *ngIf="par; else blocoPar">
+            <ng-template #blocoPar>
+                <h2> PAR </h2>
+            </ng-template>
+        </div>
+
+    </li>
+</ul>
+
+<br><br><br><br><br>

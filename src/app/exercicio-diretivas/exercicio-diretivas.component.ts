@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MEMES_AGRUPADOS_POR_CATEGORIA } from './dados-exercicio-diretiva-constantes';
 
 @Component({
   selector: 'app-exercicio-diretivas',
@@ -12,7 +13,6 @@ export class ExercicioDiretivasComponent{
     'Melão',
     'Uva',
   ];
-  
   listaCarros = [{
    placa: 'EXU-6666',
    cor: 'Preto',
@@ -33,7 +33,8 @@ export class ExercicioDiretivasComponent{
    }];
 
   deveExibir = false;
-
+  CAMINHO_URL = 'https://raw.githubusercontent.com/vitorfgsantos/angular-memes-diretivas/master/images/';
+  MEMES_AGRUPADOS_POR_CATEGORIAS = MEMES_AGRUPADOS_POR_CATEGORIA;
   trocarValor(){
     this.deveExibir = !this.deveExibir;
   }
