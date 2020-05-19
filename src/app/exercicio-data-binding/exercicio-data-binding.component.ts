@@ -44,5 +44,4 @@ constructor() {
     console.log('emitindo informações para o componente pai!');
     this.clicado.emit($event);
   }
-  
 }
