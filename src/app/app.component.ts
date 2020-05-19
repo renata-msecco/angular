@@ -6,14 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = ' Seja bem-vinda! =)';
+  // title = ' Seja bem-vinda! =)';
   palavra = 'CARRO';
   favoriteColor = 'grey';
 
   constructor() {
-    setTimeout(() => {
-      this.title = ' Que bom que você está aqui!';
-    }, 5000);
+    // setTimeout(() => {
+    //   this.title = ' Que bom que você está aqui!';
+    // }, 5000);
 
     }
     eventoRecebido($event){
