@@ -1,0 +1,15 @@
+<ul>
+    <li *ngFor="let compra of compras">
+    <p>Produto: <b>{{ compra.produto |uppercase}}</b></p>
+    <p>Valor: {{ compra.valor |currency : 'BRL'}}</p>
+    <p>Quantidade: {{ compra.quantidade}} </p>
+    
+    <p>Peso: {{ getPesoFormatado(compra.peso)}}</p>
+    <!-- <p>Peso: {{ compra.peso |number :'1.1-2'}} KG </p> -->
+    <!-- <p>Peso: {{ compra.peso > 0 ? (compra.peso|number :'1.1-2') + ' KG'  : 'sem peso'}}</p> -->
+  
+    <p>Data: {{ compra.data |date :  'EEEE, dd \'de\' MMMM\' de \'yyyy, \'às\' HH:mm' }} </p>
+    <!-- <p>Data: {{ compra.data |date :  'fullDate' }}, às {{ compra.data |date :  'HH:mm' }} </p> -->
+
+</li>
+</ul>
