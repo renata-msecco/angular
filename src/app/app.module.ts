@@ -1,7 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID } from '@angular/core';
-
-//import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
@@ -15,6 +13,11 @@ import { ExercicioPipesComponent } from './shared/components/exercicio-pipes/exe
 import localePt from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
 import { ExercicioPipesLocaleidComponent } from './shared/components/exercicio-pipes-localeid/exercicio-pipes-localeid.component';
+import { LoginComponent } from './login/login.component';
+import { AppRoutingModule } from './home/app-routing.module';
+import { ExtratoComponent } from './extrato/extrato.component';
+import { NaoEncontradoComponent } from './nao-encontrado/nao-encontrado.component';
+
 registerLocaleData(localePt, 'pt');
 
 @NgModule({
@@ -28,11 +31,14 @@ registerLocaleData(localePt, 'pt');
     ExercicioDiretivasComponent,
     ExercicioNgclassComponent,
     ExercicioPipesComponent,
-    ExercicioPipesLocaleidComponent
+    ExercicioPipesLocaleidComponent,
+    LoginComponent,
+    ExtratoComponent,
+    NaoEncontradoComponent,
   ],
   imports: [
-    BrowserModule
-   // AppRoutingModule
+    BrowserModule,
+    AppRoutingModule,
   ],
   providers: [{
     provide: LOCALE_ID,
