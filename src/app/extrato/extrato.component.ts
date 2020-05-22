@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ExtratoService } from './extrato.service';
 import { Transacao } from './extrato.interface';
 
-import { finalize } from 'rxjs/operators';
+import { finalize, take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-extrato',
@@ -27,7 +27,9 @@ export class ExtratoComponent implements OnInit {
     this.estaCarregando = true;
     this.erroNoCarregamento = false;
     this.extratoService.getTransacoes()
+
     .pipe(
+      take(1),
       finalize(() =>  this.estaCarregando = false)
 
       )
