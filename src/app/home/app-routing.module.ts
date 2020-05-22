@@ -4,11 +4,15 @@ import { LoginComponent } from '../login/login.component';
 import { HomeComponent } from './home.component';
 import { ExtratoComponent } from '../extrato/extrato.component';
 import { NaoEncontradoComponent } from '../nao-encontrado/nao-encontrado.component';
+import { ContatosComponent } from '../contatos/contatos.component';
 
 
 const routes: Routes = [{
   path: 'home',
   component: HomeComponent
+},{
+  path: 'contatos',
+  component: ContatosComponent,
 }, {
   path: 'login',
   component: LoginComponent,

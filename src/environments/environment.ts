@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  API_URL: 'https://my-json-server.typicode.com/renata-msecco/myapi'
+  API_URL: 'https://my-json-server.typicode.com/renata-msecco/myapi/'
 };
 
 /*
