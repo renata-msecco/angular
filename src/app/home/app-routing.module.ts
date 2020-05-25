@@ -5,14 +5,18 @@ import { HomeComponent } from './home.component';
 import { ExtratoComponent } from '../extrato/extrato.component';
 import { NaoEncontradoComponent } from '../nao-encontrado/nao-encontrado.component';
 import { ContatosComponent } from '../contatos/contatos.component';
+import { DetalhesContatoComponent } from '../contatos/detalhes-contato/detalhes-contato.component';
 
 
 const routes: Routes = [{
   path: 'home',
   component: HomeComponent
-},{
+}, {
   path: 'contatos',
   component: ContatosComponent,
+}, {
+  path: 'contatos/:id',
+  component: DetalhesContatoComponent,
 }, {
   path: 'login',
   component: LoginComponent,
