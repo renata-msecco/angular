@@ -37,7 +37,7 @@ export class ContatosComponent implements OnInit {
     .subscribe(
         response => this.onSuccess(response),
         error => this.onError(error)
-        )
+        );
   }
   onSuccess(response: Contato[]) {
     this.contatos = response;
