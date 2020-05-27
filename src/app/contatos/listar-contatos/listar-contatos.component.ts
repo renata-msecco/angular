@@ -26,9 +26,9 @@ export class ListarContatosComponent implements OnInit {
   carregarContatos() {
     this.estaCarregando = true;
     this.erroNoCarregamento = false;
-    
+
     this.contatosService.getContatos()
-      
+
     .pipe(
       take(1),
       finalize(() =>  this.estaCarregando = false)
