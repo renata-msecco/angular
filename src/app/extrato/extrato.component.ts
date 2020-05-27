@@ -11,6 +11,7 @@ import { Transacao } from './extrato.interface';
   styleUrls: ['./extrato.component.scss']
 })
 export class ExtratoComponent implements OnInit {
+
   transacoes: Transacao[];
   pagina = 1;
 
@@ -28,7 +29,7 @@ export class ExtratoComponent implements OnInit {
   carregarExtrato() {
     this.estaCarregando = true;
     this.erroNoCarregamento = false;
-    
+
     this.extratoService.getTransacoes(this.pagina)
 
     .pipe(
@@ -55,7 +56,7 @@ export class ExtratoComponent implements OnInit {
         this.pagina = this.pagina + 1;
         this.carregarExtrato();
       }
-      
+
        paginaAnterior() {
         this.pagina = this.pagina - 1;
         this.carregarExtrato();
