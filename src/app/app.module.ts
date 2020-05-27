@@ -20,12 +20,9 @@ registerLocaleData(localePt, 'pt');
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     LoginComponent,
     ExtratoComponent,
     NaoEncontradoComponent,
-    ContatosComponent,
-    DetalhesContatoComponent,
   ],
   imports: [
     BrowserModule,
