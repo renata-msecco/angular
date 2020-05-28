@@ -1,24 +1,20 @@
-import { Component, Input, OnInit, OnChanges, AfterViewInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+
+import { AuthService } from '../../services/auth/auth.service';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnChanges, OnInit, AfterViewInit {
+export class HeaderComponent {
 
-  @Input() title = 'Seja Bem Vindx';
-  constructor(){
-    console.log('constructor');
+  @Input() title: string;
+
+  constructor(
+    private authService: AuthService,
+  ) { }
+  logout(){
+    this.authService.logout();
   }
-  ngOnChanges() {
-    console.log('ngOnChanges');
-  }
-  ngOnInit(): void{
-  console.log('ngOnInit');
-  }
- ngAfterViewInit(){
- console.log('ngAfterViewInit');
- }
 }
-

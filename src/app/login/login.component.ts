@@ -1,19 +1,20 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import {  NgForm } from '@angular/forms';
-import { LoginService } from './login.service';
 import { finalize } from 'rxjs/operators';
 import { Router } from '@angular/router';
+
+import { LoginService } from './login.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-
 export class LoginComponent {
+
   @ViewChild('emailInput') emailInput: ElementRef;
   @ViewChild('senhaInput') senhaInput: ElementRef;
-  
+
   email: string;
   senha: string;
 

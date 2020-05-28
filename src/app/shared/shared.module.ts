@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ExercicioDataBindingComponent } from './components/exercicio-data-binding/exercicio-data-binding.component';
@@ -8,7 +10,6 @@ import { ExercicioDiretivasComponent } from './components/exercicio-diretivas/ex
 import { ExercicioNgclassComponent } from './components/exercicio-ngclass/exercicio-ngclass.component';
 import { ExercicioPipesComponent } from './components/exercicio-pipes/exercicio-pipes.component';
 import { ExercicioPipesLocaleidComponent } from './components/exercicio-pipes-localeid/exercicio-pipes-localeid.component';
-import { AppRoutingModule } from '../home/app-routing.module';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { AppRoutingModule } from '../home/app-routing.module';
   ],
   imports: [
     CommonModule,
-    AppRoutingModule,
+    RouterModule,
   ],
   exports: [
     FooterComponent,
