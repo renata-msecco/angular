@@ -44,9 +44,11 @@ export class EditarContatoComponent implements OnInit {
     this.contatoForm = this.formBuilder.group({
       nome: ['', Validators.required],
       cpf: ['', Validators.required],
-      banco: ['', Validators.required],
-      ag: ['', [Validators.required, Validators.minLength(4)]],
-      cc: ['', [Validators.required, Validators.minLength(5)]],
+      // dadosBancarios: this.formBuilder.group({
+        banco: ['', Validators.required],
+        ag: ['', [Validators.required, Validators.minLength(4)]],
+        cc: ['', [Validators.required, Validators.minLength(5)]],
+      // }),
     });
   }
 
@@ -83,16 +85,20 @@ export class EditarContatoComponent implements OnInit {
     return this.contatoForm.get(nomeControle).invalid && this.contatoForm.get(nomeControle).touched;
 
   }
-  validateAllFormFilds() {
+  validarCamposDoFormulario(form: FormGroup) {
     Object.keys(this.contatoForm.controls).forEach(field => {
       const control = this.contatoForm.get(field);
+      if (control instanceof FormControl){
       control.markAsTouched();
+      }else if(control instanceof FormGroup){
+        this.validarCamposDoFormulario(control);
+      }
     });
   }
 
   onSubmit() {
     if (this.contatoForm.invalid) {
-      this.validateAllFormFilds();
+      this.validarCamposDoFormulario(this.contatoForm);
       return;
     }
     if (this.estaEditando()){
