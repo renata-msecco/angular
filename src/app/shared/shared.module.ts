@@ -10,6 +10,8 @@ import { ExercicioDiretivasComponent } from './components/exercicio-diretivas/ex
 import { ExercicioNgclassComponent } from './components/exercicio-ngclass/exercicio-ngclass.component';
 import { ExercicioPipesComponent } from './components/exercicio-pipes/exercicio-pipes.component';
 import { ExercicioPipesLocaleidComponent } from './components/exercicio-pipes-localeid/exercicio-pipes-localeid.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './interceptotors/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -36,5 +38,10 @@ import { ExercicioPipesLocaleidComponent } from './components/exercicio-pipes-lo
     ExercicioPipesComponent,
     ExercicioPipesLocaleidComponent,
   ],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true,
+  }]
 })
 export class SharedModule { }

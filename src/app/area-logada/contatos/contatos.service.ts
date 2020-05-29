@@ -8,11 +8,7 @@ import { environment } from 'src/environments/environment';
 })
 export class ContatosService {
   API_URL = environment.API_URL;
-  httpOptions = {
-    headers: new HttpHeaders({
-      Authorization: '...TOKEN DE AUTENTICAÇÃO...'
-    })
-};
+
   constructor(
     private http: HttpClient,
   ) { }
@@ -22,11 +18,11 @@ export class ContatosService {
   }
 
   getContatoPorId(id: string) {
-    return this.http.get<Contato>(this.API_URL + '/contatos/' + id, this.httpOptions);
+    return this.http.get<Contato>(this.API_URL + '/contatos/' + id);
   }
 
   createContato(contato: Contato) {
-    return this.http.post<Contato[]>(this.API_URL + '/contatos', contato, this.httpOptions);
+    return this.http.post<Contato[]>(this.API_URL + '/contatos', contato);
   }
 
   updateContato(id: string, contato: Contato) {
