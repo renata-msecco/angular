@@ -24,9 +24,11 @@ export class DetalharContatoComponent implements OnInit {
   ngOnInit() {
     this.carregarContato();
   }
+
   carregarContato() {
     this.estaCarregando = true;
     this.erroNoCarregamento = false;
+
     const idContato = this.route.snapshot.paramMap.get('id');
     this.contatosService.getContatoPorId(idContato)
     .pipe(

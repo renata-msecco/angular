@@ -50,7 +50,10 @@ export class ListarContatosComponent implements OnInit {
     console.error(error);
   }
   irParaDetalhes(idContato: number){
-    this.router.navigate(['contatos/' + idContato]);
+    this.router.navigate([`contatos/${idContato}`]);
+  }
+  irParaEditar(idContato: number){
+    this.router.navigate([`contatos/${idContato}/editar`]);
   }
   deletarContato(idContato: number){
     this.contatosService.deleteContato(idContato.toString())
@@ -67,5 +70,8 @@ export class ListarContatosComponent implements OnInit {
   onErrorDeletarContato(){
     // console.log('contato deletado!');
      // faço outra coisa
+  }
+  novoContato(){
+    this.router.navigate(['contatos/novo']);
   }
 }

@@ -1,0 +1,49 @@
+<div class="container -pt5">
+
+    <div class="text-center" *ngIf="estaCarregando">
+        <div class="spinner-border" role="status"></div>
+    </div>
+
+    <div *ngIf="erroNoCarregamento">
+        <h2>Erro</h2>
+        <button (click)="carregarContato()">Tentar novamente</button>
+    </div>
+
+    <div *ngIf="!estaCarregando && !erroNoCarregamento">
+        <form [formGroup]="contatoForm">
+            <div class="form-group">
+                <label for="nome">Nome</label>
+                <input type="text" class="form-control" id="nome" placeholder="Nome" formControlName="nome"
+                    [ngClass]="exibeErro('nome') ? 'is-invalid': ''" #nomeInput>
+            </div>
+
+            <div class="form-group">
+                <label for="cpf">CPF</label>
+                <input type="text" class="form-control" id="cpf" placeholder="CPF" formControlName="cpf"
+                    [ngClass]="exibeErro('cpf') ? 'is-invalid': ''" #cpfInput>
+            </div>
+
+            <div class="form-group">
+                <label for="banco">Banco</label>
+                <input type="text" class="form-control" id="banco" placeholder="Banco" formControlName="banco"
+                    [ngClass]="exibeErro('banco') ? 'is-invalid': ''" #bancolInput>
+            </div>
+
+            <div class="form-group">
+                <label for="ag">Agência</label>
+                <input type="number" class="form-control" id="ag" placeholder="Agência" formControlName="ag"
+                    [ngClass]="exibeErro('ag') ? 'is-invalid': ''" #agInput>
+            </div>
+
+            <div class="form-group">
+                <label for="cc">Conta</label>
+                <input type="text" class="form-control" id="cc" placeholder="Conta" formControlName="cc"
+                    [ngClass]="exibeErro('cc') ? 'is-invalid': ''" #ccInput>
+            </div>
+
+            <button class="btn btn-primary" (click)=" onSubmit()">
+                {{ estaEditando() ? 'Salvar contato' : 'Criar Contato' }}
+            </button>
+        </form>
+    </div>
+</div>

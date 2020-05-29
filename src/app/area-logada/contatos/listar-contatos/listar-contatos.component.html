@@ -3,11 +3,14 @@
     <div class="spinner-border" role="status" *ngIf="estaCarregando">
         <span class="sr-only">Loading...</span>
     </div>
+    
 
     <div *ngIf="erroNoCarregamento">
         <h2>Erro</h2>
         <button (click)="carregarContatos()">Tentar novamente</button>
     </div>
+
+    <button class ="btn btn-primary m-1" (click)="novoContato()"> Novo Contato</button>
 
     <div *ngIf="!estaCarregando && !erroNoCarregamento">
 
@@ -22,6 +25,7 @@
                 <td> {{contato.nome }} </td>
             <td>
                 <button class="btn btn-primary m-1"(click)="irParaDetalhes(contato.id)">Ver detalhes</button>
+                <button class="btn btn-primary m-1"(click)="irParaEditar(contato.id)">Editar</button>
                 <button class="btn btn-danger m-1"(click)="deletarContato(contato.id)">Deletar</button>
             </td>
             </tr>
